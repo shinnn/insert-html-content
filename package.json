@@ -1,0 +1,57 @@
+{
+	"name": "insert-html-content",
+	"version": "1.0.0",
+	"description": "Insert contents into an HTML of a response body",
+	"repository": "shinnn/insert-html-content",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"license": "ISC",
+	"scripts": {
+		"pretest": "eslint .",
+		"test": "nyc node test.js"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"inject",
+		"injection",
+		"insert",
+		"insertion",
+		"add",
+		"addition",
+		"html5",
+		"htm",
+		"html",
+		"http",
+		"response",
+		"body",
+		"modify",
+		"modification",
+		"streaming",
+		"non-buffering"
+	],
+	"dependencies": {
+		"content-type": "^1.0.4",
+		"inspect-with-kind": "^1.0.5",
+		"is-plain-obj": "^1.1.0",
+		"parse5-sax-parser": "^5.1.0"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config": "^6.8.0",
+		"eslint": "^5.8.0",
+		"lodash": "^4.17.11",
+		"node-fetch": "^2.2.0",
+		"nyc": "^13.1.0",
+		"nyc-config-common": "^1.0.1",
+		"tape": "^4.9.1"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn",
+		"rules": {
+			"no-use-extend-native/no-use-extend-native": "off"
+		}
+	},
+	"nyc": {
+		"extends": "nyc-config-common"
+	}
+}
