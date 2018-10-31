@@ -360,7 +360,7 @@ function main(res, insertionChunk, insertionLength, etag, targetTagName, insertT
 			return originalEnd(...args);
 		}
 
-		if (typeof args[0] === 'function') {
+		if (args.length === 0 || typeof args[0] === 'function') {
 			args.unshift(Buffer.alloc(0));
 		} else if (!Buffer.isBuffer(args[0])) {
 			args[0] = Buffer.from(args[0]);

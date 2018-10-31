@@ -81,11 +81,11 @@ test('insertHtmlContent()', async t => {
 			return;
 		}
 
-		if (req.url.endsWith('plain-text-with-head/')) {
+		if (req.url.endsWith('plain-text-with-body/')) {
 			res.setHeader('content-type', 'text/plain');
 			res.setHeader('content-length', 7);
-			insertHtmlContent(res, '<head>');
-			res.end('</head>');
+			insertHtmlContent(res, '</body>');
+			res.end('<body>');
 			return;
 		}
 
@@ -189,8 +189,8 @@ test('insertHtmlContent()', async t => {
 		})(),
 		(async () => {
 			t.equal(
-				await (await fetch('http://localhost:3018/plain-text-with-head/')).text(),
-				'</head>',
+				await (await fetch('http://localhost:3018/plain-text-with-body/')).text(),
+				'<body>',
 				'should ignore non-HTML responses even if it has <body> tag.'
 			);
 		})(),
