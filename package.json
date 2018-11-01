@@ -1,6 +1,6 @@
 {
 	"name": "insert-html-content",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Insert contents into an HTML of a response body",
 	"repository": "shinnn/insert-html-content",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
