@@ -27,7 +27,7 @@ class HtmlInsertionStream extends Parse5SaxParser {
 	constructor({targetTagName, insertionChunk, insertionLength, insertToEnd}) {
 		super(parserOption);
 
-		this.utf8Decoder = new TextDecoder('utf8', decoderOption); // eslint-disable-line no-undef
+		this.utf8Decoder = new TextDecoder('utf8', decoderOption);
 		this.buffers = [];
 		this.stringBuffer = '';
 		this.len = 0;
