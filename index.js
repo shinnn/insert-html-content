@@ -154,32 +154,38 @@ class HtmlInsertionStream extends Parse5SaxParser {
 	}
 
 	getWritableBuffer() {
-		if (this.writableOffset !== 0) {
-			const writableLen = this.writableOffset - this.writtenOffset;
-			let index = 0;
+		if (this.writableOffset === 0) {
+			return Buffer.alloc(0);
+		}
+		const writableLen = this.writableOffset - this.writtenOffset;
 
-			this.writtenOffset = this.writableOffset;
-			this.writableOffset = 0;
-			this.len -= writableLen;
+		this.writtenOffset = this.writableOffset;
+		this.writableOffset = 0;
+		this.len -= writableLen;
 
-			for (const [arrIndex, buffer] of this.buffers.entries()) {
-				if (index + buffer.length === writableLen) {
-					return Buffer.concat(this.buffers.splice(0, arrIndex + 1), writableLen);
-				}
+		let start = 0;
+		let writingBuffers;
 
-				if (index + buffer.length > writableLen) {
-					const sliceIndex = writableLen - index;
-					const writingBuffers = this.buffers.splice(0, arrIndex + 1, buffer.slice(sliceIndex));
+		for (const [arrIndex, buffer] of this.buffers.entries()) {
+			const nextStart = start + buffer.length;
 
-					writingBuffers.splice(-1, 1, buffer.slice(0, sliceIndex));
-					return Buffer.concat(writingBuffers, writableLen);
-				}
-
-				index += buffer.length;
+			if (nextStart === writableLen) {
+				writingBuffers = this.buffers.splice(0, arrIndex + 1);
+				break;
 			}
+
+			if (nextStart > writableLen) {
+				const sliceIndex = writableLen - start;
+
+				writingBuffers = this.buffers.splice(0, arrIndex + 1, buffer.slice(sliceIndex));
+				writingBuffers[writingBuffers.length - 1] = buffer.slice(0, sliceIndex);
+				break;
+			}
+
+			start = nextStart;
 		}
 
-		return Buffer.alloc(0);
+		return Buffer.concat(writingBuffers, writableLen);
 	}
 }
 
