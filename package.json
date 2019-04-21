@@ -2,8 +2,8 @@
 	"name": "insert-html-content",
 	"version": "1.0.1",
 	"description": "Insert contents into an HTML of a response body",
-	"repository": "shinnn/insert-html-content",
 	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"repository": "shinnn/insert-html-content",
 	"license": "ISC",
 	"scripts": {
 		"pretest": "eslint .",
@@ -33,12 +33,12 @@
 	"dependencies": {
 		"content-type": "^1.0.4",
 		"inspect-with-kind": "^1.0.5",
-		"is-plain-obj": "^1.1.0",
+		"is-plain-obj": "^2.0.0",
 		"parse5-sax-parser": "^5.1.0"
 	},
 	"devDependencies": {
 		"@shinnn/eslint-config": "^6.10.1",
-		"coverage": "^0.1.4",
+		"coverage": "^0.1.5",
 		"eslint": "^5.16.0",
 		"lodash": "^4.17.11",
 		"node-fetch": "^2.3.0",
