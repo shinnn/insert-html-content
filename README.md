@@ -1,7 +1,7 @@
 # insert-html-content
 
 [![npm version](https://img.shields.io/npm/v/insert-html-content.svg)](https://www.npmjs.com/package/insert-html-content)
-[![Build Status](https://travis-ci.com/shinnn/insert-html-content.svg?branch=master)](https://travis-ci.com/shinnn/insert-html-content)
+[![GitHub Actions](https://action-badges.now.sh/shinnn/insert-html-content)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/shinnn/insert-html-content)
 [![codecov](https://codecov.io/gh/shinnn/insert-html-content/branch/master/graph/badge.svg)](https://codecov.io/gh/shinnn/insert-html-content)
 
 Insert contents into an HTML of a response body
@@ -124,4 +124,4 @@ const injectStyle = new InsertHtmlContent('<style>body {color: red}</style>');
 
 ## License
 
-[ISC License](./LICENSE) © 2018 - 2019 Shinnosuke Watanabe
+[ISC License](./LICENSE) © 2018 - 2019 Watanabe Shinnosuke

@@ -2,7 +2,7 @@
 	"name": "insert-html-content",
 	"version": "1.0.2",
 	"description": "Insert contents into an HTML of a response body",
-	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"author": "Watanabe Shinnosuke (https://github.com/shinnn)",
 	"repository": "shinnn/insert-html-content",
 	"license": "ISC",
 	"scripts": {
